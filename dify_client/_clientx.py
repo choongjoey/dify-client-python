@@ -21,8 +21,8 @@ from pydantic import BaseModel
 
 from dify_client import errors, models
 
-_httpx_client = httpx.Client()
-_async_httpx_client = httpx.AsyncClient()
+_httpx_client = httpx.Client(verify=False)
+_async_httpx_client = httpx.AsyncClient(verify=False)
 
 IGNORED_STREAM_EVENTS = (models.StreamEvent.PING.value,)
 
